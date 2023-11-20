@@ -1,8 +1,10 @@
+# Calculate package shipping cost according to its weight
+
 class Calculate_Shipment():
 
     def __init__(self):
         self.weight = 0
-        self.unit = 0 
+        self.unit = 0
         self.total = 0
         self.product = 0
         self.price = 0
