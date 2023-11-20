@@ -12,7 +12,7 @@ class Calculate_Shipment():
     def obtain_weight(self):
         print("Enter the weight and units to calculate")
         while True:
-            try:                                
+            try:
                 self.weight = float(input("Enter weight of product: "))
                 self.unit = int(input("Enter units: "))
                 if self.weight <= 0 or self.unit <= 0:
@@ -20,8 +20,9 @@ class Calculate_Shipment():
                 self.product = self.weight * self.unit
                 self.total += self.product
                 while True:
-                    answer = input("Do you want enter more products? Yes: Y, No: N \n")
-                    if answer.upper() in ('Y','N'):
+                    answer = input(
+                        "Do you want enter more products? Yes: Y, No: N \n")
+                    if answer.upper() in ('Y', 'N'):
                         break
                     else:
                         print("Yo must indicate 'Y' or 'N'")
@@ -30,7 +31,7 @@ class Calculate_Shipment():
             except:
                 print("Please, enter a number")
         return self.total
-               
+
     def calculate_price(self):
         message = "Price of your shipment is"
         if self.total < 1:
@@ -55,7 +56,7 @@ class Calculate_Shipment():
 calculator = Calculate_Shipment()
 total = calculator.obtain_weight()
 if isinstance(total, float) and total > 0:
-    if total < 1 :
+    if total < 1:
         print("Total weight", round(total, 2), "gr")
     else:
         print("Total weight", total, "Kg")
